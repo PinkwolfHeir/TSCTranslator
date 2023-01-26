@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>vvv's Goober Translator</title>
+		<title>vvv's TSC Latex Cipher Tool</title>
 		<link rel="icon" type="image/x-icon"  href="Whitelatex.ico"></link>
 		
 		<style>
@@ -44,16 +44,16 @@
 	</head>
 
 	<body>
-		<h1>vvv's Goober Translator</h1>
-		<h2>it just converts letter set from Latex to Native and vice versa, when done, press "Translate" to get the result.</h2>
-		<h3>credit to nikothegamer#5275 for the original idea. You can check their translator <a href="https://nikothegamer100.github.io/latex-language-translator/">here</a></h3>
+		<h1>vvv's TSC Latex Cipher Tool</h1>
+		<h2>All this thing does is it takes original text and passes it through cipher which converts english letter set into TSC's Latex Language letter set.</h2>
+		<h3>credit to nikothegamer#5275 for the original idea. You can check their cipher tool <a href="https://nikothegamer100.github.io/latex-language-translator/">here</a></h3>
 		<h3>you can check <a href="https://github.com/vvv331/TSCLatexTranslator">the source-code here!</a></h3>
 		<h4>Uppercase letters are automatically lowercased because I don't think this language has uppercase letters.</h4>
 
 		<textarea id="LtoN" type="text" style="width: 450px; background-color:rgba(20,20,20,1)"></textarea>Latex -> Native <button onclick="LatexToNative()" style="background-color:rgb(66,66,66)">Translate</button>
 	</br>
 		<textarea id="NtoL" type="text" style="width: 450px; background-color:rgba(20,20,20,1)"></textarea>Native -> Latex <button onclick="NativeToLatex()" style="background-color:rgb(66,66,66)">Translate</button>
-		<h2>You can use symbol set from here below if you'd like to write in Latex letter set.</h2>
+		<h2>You can also use the keyboard below to write in cipher.</h2>
 		<div id="keyboard" style="display: flex; width: 48	0px; height:150px; background-color:rgba(77,77,77); flex-wrap: wrap">
 			<button class="key h" key="σ">a<br>σ</div>
 		</div>
@@ -96,9 +96,9 @@
 			}
 
 			let invertedList = {}
-			let LineBreak = ["p", "l"];
+			let LineBreak = ["p", "l"]; //this is used so we add a linebreak for keyboard.
 			for (key in symbolList) {
-				let translatedKey = symbolList[key]
+				let translatedKey = symbolList[key] //converts original letter set into cipher.
 				invertedList[symbolList[key]] = key;
 
 				let clonedKey = keyboardKey.cloneNode(true);
@@ -117,10 +117,10 @@
 
 			function NativeToLatex() {
 				let input = NtoLinput.value
-				if (typeof input === "string") {
-					input = input.toLowerCase()
+				if (typeof input === "string") { //ensure input is string to avoid errors
+					input = input.toLowerCase() //this cipher does not support uppercase letters, lowercase them.
 					let result = "";
-					for (letter of input) {
+					for (letter of input) { //go letter by letter and check if such letter from cipher exists, otherwise, use regular letter
 						result += symbolList[letter] ? symbolList[letter] : letter;
 					};
 					NtoLinput.value = result
