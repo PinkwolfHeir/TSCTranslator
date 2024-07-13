@@ -1,5 +1,6 @@
 # WEBSITE TO BE REMOVED BY SEPT. 1st.
 ## The community I've made this translator for isn't the best, I might even consider leaving it eventually as a whole. (as for friends in this server, you'll be fine, since y'all aren't actually insane)
+I've actually attached The Unlicense so if you want to continue your own one, you can fork it no problem.
 
 # TSC Latex Translator
 If you ever want to speak [Thunder Scientific Corporation's](https://www.roblox.com/games/7131355525) Latex language, you can do it with this single HTML file.
